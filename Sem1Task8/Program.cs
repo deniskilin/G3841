@@ -4,11 +4,11 @@
 string? imputNumLine = Console.ReadLine();
 int N = int.Parse(imputNumLine);
 string? result = string.Empty;
-for(int i=2; i<N; i=i+2)
+for (int i = 2; i < N; i = i + 2)
 {
     result = result + i + ',';
 }
-if(N%2==0)
+if (N % 2 == 0)
 {
     result = result + 2;
 }
