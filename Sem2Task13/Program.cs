@@ -2,7 +2,7 @@
 // что третьей цифры нет.
 Console.Write("Введите трехзначное число: ");
 string? str = Console.ReadLine();
-if (str.Length > 3)
+if (str.Length >= 3)
 {
     Console.WriteLine(str[2]);
 }
