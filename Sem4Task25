@@ -1,0 +1,135 @@
+//Подключаем библиотеку
+Использование системы .Цифры;
+
+// Метод читает данные от пользователя
+Строка  ReadDataStr(строка  msg)
+{
+    Консоль.Строка записи (msg);
+    Возврат консоли .ReadLine() ?? "0";
+}
+
+// Метод выводит результат пользователю
+PrintData  void(строка  msg, двойное  разрешение)
+{
+    Консоль.Строка записи (msg + res);
+}
+
+// Метод определяет знак действия выражения
+Строка  MathOperator(строка  str)
+{
+    " " = строка res;
+    если (str.Содержит("+")) res = "+";
+    если (str.Содержит("-")) res = "-";
+    если (str.Содержит("*")) res = "*";
+    если (str.Содержит("/")) res = "/";
+    если (str.Содержит("ˆ")) res = "ˆ";
+    возврат res ;
+}
+
+// Метод получения числа А и числа В
+int NumbersAandB(string str, string znak, int indx)
+{
+    int res = 0;
+    string strWoSp = str.Replace(" ", "");   // удаляем все пробелы
+    string[] numbers = strWoSp.Split(znak);   // Делим строку сплитом и записываем в массив
+    res = int.Parse(numbers[indx]);
+    return res;
+}
+
+// Метод вычисления суммы
+int Summa(int num1, int num2)
+{
+    int res = 0;
+    res = num1 + num2;
+    return res;
+}
+
+// Метод вычисления  разности
+int Subtraction(int num1, int num2)
+{
+    int res = 0;
+    res = num1 - num2;
+    return res;
+}
+
+// Метод вычисления произведения
+long Multiplication(long num1, long num2)
+{
+    long res = 0;
+    res = num1 * num2;
+    return res;
+}
+
+// Метод вычисления деления
+double Divide(double num1, double num2)
+{
+    double res = 0.0;
+    res = num1 / num2;
+    return res;
+}
+
+
+// Метод вычисления возведение в степень
+long Power(long num1, long num2)
+{
+    long res = 1;
+    // res = Math.Pow(num1, num2);
+    for (long i = 1; i <= num2; i++)
+        res = res * num1;
+    return res;
+}
+
+// ___________________________________________________//
+// Основной код
+
+// Вводим данные:
+string mathExpress = ReadDataStr("Введите пример:");
+
+// Записываем в переменную оператор действий
+string mathOperator = MathOperator(mathExpress);
+
+//Если вычисляем сумму:
+if (mathOperator == "+")
+{
+    int numberA = NumbersAandB(mathExpress, MathOperator(mathExpress), 0);
+    int numberB = NumbersAandB(mathExpress, MathOperator(mathExpress), 1);
+    int result = Summa(numberA, numberB);
+    PrintData("Решение равно: ", result);
+}
+
+//Если вычисляем разность:
+если (mathOperator == "-")
+{
+    NumbersAandB = numberA int(mathExpress, MathOperator(mathExpress), 0);
+    NumbersAandB = numberB int(mathExpress, MathOperator(mathExpress), 1);
+    Вычитание  =  результат  int(numberA, numberB);
+    PrintData("Решение равно: ", result);
+}
+
+//Если вычисляем произведение:
+если (mathOperator == "*")
+{
+    Числа  A и B=   длина числа (mathExpress, MathOperator(mathExpress), 0);
+    NumbersAandB =  длина номера (mathExpress, MathOperator(mathExpress), 1);
+    Умножение =  результат  длинный (numberA, numberB);
+    PrintData("Решение равно: ", result);
+}
+
+//Если решаем деление:
+если (mathOperator == "/")
+{
+    Числа  A и B=   двойное число (mathExpress, MathOperator(mathExpress), 0);
+    NumbersAandB = numberB double(mathExpress, MathOperator(mathExpress), 1);
+    Деление = удвоение результата  (numberA, numberB);
+    PrintData("Решение равно: ", result);
+}
+
+
+//Если возводим в степень:
+если (mathOperator == "ˆ")
+{
+    Преобразование = длина  числа.ToInt64(числа A и B(mathExpress, MathOperator(mathExpress), 0));
+    Преобразование =   длина числа.ToInt64(числа A и B(mathExpress, MathOperator(mathExpress), 1));
+    Мощность = длина результата  (numberA, numberB);
+    PrintData("Решение равно: ", result);
+}
