@@ -57,3 +57,5 @@ Print1DArr(testArr);
 
 // Считаем разницу м/д max и min элементами массива, результат выводим в консоль
 PrintData(MaxMinSubtraction(testArr));
+
+print("Hello, world!")
